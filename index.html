@@ -78,69 +78,86 @@ function clicar(){
 }
 </script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=DynaPuff&display=swap');
-html, body{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-body{
-    height: 100vh;
-    background-color: rgb(139, 46, 119);
-    font-family:'DynaPuff', cursive;
-    color: white;
-    text-shadow: 1px 2px 2px black;
+       @import url('https://fonts.googleapis.com/css2?family=DynaPuff&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-a{
-  text-decoration: none !important;
-    text-color: white;
+body {
+  height: 100vh;
+  background: linear-gradient(135deg, #ffe0f0, #f8c4d6);
+  font-family: 'DynaPuff', cursive;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 1px 1px 2px #00000050;
 }
-header{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 125px;
+
+header {
+  margin-bottom: 30px;
 }
-h1{
-    font-size: 50px;
+
+h1 {
+  font-size: 50px;
+  color: #c13b65;
 }
-#conteiner{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
+#conteiner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
-#area{
-    background-color: rgb(237, 216, 237);
-    width: 550px;
-    height: 390px;
-    padding: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    border-radius: 15px;
-    box-shadow: 1px 3px 3px 2px rgba(1, 1, 1, .5);
+
+#area {
+  background-color: #ffffff;
+  width: 500px;
+  height: 350px;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, .2);
+  position: relative;
 }
-#opcNo:hover{
-    color: red;
+
+.option {
+  background-color: #e75480;
+  height: 90px;
+  width: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+  font-size: 28px;
+  color: white;
+  border-radius: 15px;
+  transition: all 0.5s ease;
+  box-shadow: 2px 4px 6px rgba(0, 0, 0, .3);
+  cursor: pointer;
+  user-select: none;
 }
-#opcyes:hover{
-    color: blue;
+
+#opcNo:hover {
+  background-color: #ff95ae;
 }
-.option{
-    background-color: rgb(205, 50, 171);
-    height: 90px;
-    width: 90px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 50px;
-    font-size: 35px;
-    border-radius: 15px;
-    transition: all .5s;
-    box-shadow: 1px 3px 3px 2px rgba(1, 1, 1, .5);
-    cursor: pointer;
+
+#opcyes:hover {
+  background-color: #b63860;
+  transform: scale(1.1);
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
 }
 
     </style>
