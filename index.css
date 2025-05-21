@@ -13,7 +13,7 @@ body{
 }
 
 a{
-  decoration: none !important;  
+  text-decoration: none !important;  
 }
 header{
     display: flex;
