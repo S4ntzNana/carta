@@ -1,13 +1,107 @@
 <!DOCTYPE html>
-  <html lang="PT-BR">
-    <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Teamo</title>
-    </head>
-    <body>
-        <h2>teste<h2>
-      <p>Texto em processo <3</p>
-          <img src="https://i.postimg.cc/sgzZYwy0/sonic-shadow.gif">
-    </body>
-    </html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Te Amo</title>
+  <link href="https://fonts.googleapis.com/css2?family=DynaPuff&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background-color: rgb(139, 46, 119);
+      font-family: 'DynaPuff', cursive;
+      color: white;
+      text-shadow: 1px 2px 2px black;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    #conteiner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px 20px;
+      width: 100%;
+      max-width: 800px;
+    }
+
+    #area {
+      background-color: rgb(237, 216, 237);
+      width: 100%;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 1px 3px 6px rgba(0, 0, 0, .5);
+      color: #333;
+      text-shadow: none;
+      max-height: 60vh;
+      overflow-y: auto;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 36px;
+      color: #c13b65;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 20px;
+      line-height: 1.6;
+    }
+
+    .botoes {
+      margin-top: 25px;
+      display: flex;
+      gap: 20px;
+    }
+
+    .botao-extra {
+      background-color: #e75480;
+      color: white;
+      font-size: 30px;
+      border: none;
+      padding: 15px 25px;
+      border-radius: 15px;
+      box-shadow: 2px 4px 6px rgba(0, 0, 0, .3);
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-color 0.3s ease, transform 0.2s;
+    }
+
+    .botao-extra:hover {
+      background-color: #c13b65;
+      transform: scale(1.1);
+    }
+
+    @media screen and (max-width: 500px) {
+      .botoes {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .botao-extra {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main id="conteiner">
+    <div id="area">
+      <h2>Minha cartinha 💖</h2>
+      <p>
+        Aqui vai o texto da sua cartinha...
+      </p>
+    </div>
+
+    <div class="botoes">
+      <a href="tempo.html" class="botao-extra">📅</a>
+      <a href="album.html" class="botao-extra">📖</a>
+    </div>
+  </main>
+</body>
+</html>
