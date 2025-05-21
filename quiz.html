@@ -5,80 +5,25 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="quiz-container">
-    <h1>Quiz</h1>
-    <div id="question-container"></div>
-    <button id="submit-btn">Submit</button>
-    <div id="result-container"></div>
-  </div>
+ <div>
+  <label for="answer">Resposta..</label>
+  <input name="answer"  type="text">
+  <input id="answer" type="submit" value="submit" onclick="answer()">
+</div>
 
-  <script>
-    
-    const quizData = [ // cria constante
-  {
-    question: "What is the capital of France?", // cria a questão
-    options: ["Berlin", "Madrid", "Paris", "Rome"], // alternativas
-    correctAnswer: "Paris" // a resposta certa
-  },
-  {
-    question: "Which planet is known as the Red Planet?",
-    options: ["Earth", "Mars", "Jupiter", "Venus"],
-    correctAnswer: "Mars"
-  }
-];
 
-const questionContainer = document.getElementById("question-container"); 
-const submitBtn = document.getElementById("submit-btn");
-const resultContainer = document.getElementById("result-container");
+  
+ <script>
+    var uInp = document.getElementById("answer");
 
-let currentQuestionIndex = 0; 
-let score = 0;
-
-function showQuestion() {
-  const currentQuestion = quizData[currentQuestionIndex];
-  questionContainer.innerHTML = `
-    <h2>${currentQuestion.question}</h2>
-    <ul class="options-list">
-      ${currentQuestion.options.map((option, index) => `
-        <li>
-          <input type="radio" id="option${index}" name="answer" value="${option}">
-          <label for="option${index}">${option}</label>
-        </li>
-      `).join('')}
-    </ul>
-  `;
-}
-
-function checkAnswer() {
-  const selectedOption = document.querySelector('input[name="answer"]:checked');
-  if (selectedOption) {
-    if (selectedOption.value === quizData[currentQuestionIndex].correctAnswer) {
-      score++;
-    }
-    currentQuestionIndex++;
-    if (currentQuestionIndex < quizData.length) {
-      showQuestion();
-    } else {
-      showResult();
-    }
-  } else {
-    alert("Please select an answer.");
-  }
-}
-
-function showResult() {
-  questionContainer.style.display = "none";
-  submitBtn.style.display = "none";
-  resultContainer.innerHTML = `
-    <h2>Quiz Completed!</h2>
-    <p>Your score: ${score} out of ${quizData.length}</p>
-  `;
-}
-
-showQuestion();
-submitBtn.addEventListener("click", checkAnswer);
-  </script>
-
+function answer() {
+  if (uInp == "pedro") {
+    alert("correct");
+  }else{
+    alert("incorrect");
+  };
+};
+ </script>
 
 <style>
     #quiz-container {
