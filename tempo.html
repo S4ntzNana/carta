@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Tempo que nos conhecemos</title>
+  <link href="https://fonts.googleapis.com/css2?family=DynaPuff&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: rgb(139, 46, 119);
+      font-family: 'DynaPuff', cursive;
+      color: white;
+      text-shadow: 1px 2px 2px black;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 30px;
+      max-width: 600px;
+    }
+
+    #contador {
+      font-size: 48px;
+      font-weight: bold;
+      background-color: rgb(237, 216, 237);
+      color: #8b2e77;
+      padding: 30px 40px;
+      border-radius: 20px;
+      box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.5);
+      user-select: none;
+      min-width: 350px;
+    }
+
+    @media (max-width: 500px) {
+      #contador {
+        font-size: 36px;
+        padding: 20px 25px;
+        min-width: auto;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Tempo que nos conhecemos (e você não me pediu em namoro ainda) 💜</h1>
+  <div id="contador">Carregando...</div>
+
+  <script>
+    const contador = document.getElementById('contador');
+    // Data em que vocês se conheceram: 8 de março de 2025 (ano, mês (0-11), dia, hora, min, seg)
+    const dataInicio = new Date(2025, 2, 8, 0, 0, 0); // Março é mês 2 (janeiro = 0)
+
+    function atualizarContador() {
+      const agora = new Date();
+      let diff = agora - dataInicio; // diferença em ms
+
+      if(diff < 0) {
+        contador.textContent = "Ainda não chegou o dia!";
+        return;
+      }
+
+      const msPorSegundo = 1000;
+      const msPorMinuto = msPorSegundo * 60;
+      const msPorHora = msPorMinuto * 60;
+      const msPorDia = msPorHora * 24;
+
+      const dias = Math.floor(diff / msPorDia);
+      diff = diff % msPorDia;
+
+      const horas = Math.floor(diff / msPorHora);
+      diff = diff % msPorHora;
+
+      const minutos = Math.floor(diff / msPorMinuto);
+      diff = diff % msPorMinuto;
+
+      const segundos = Math.floor(diff / msPorSegundo);
+
+      contador.textContent = `${dias}d ${horas}h ${minutos}m ${segundos}s`;
+    }
+
+    // Atualiza o contador a cada segundo
+    atualizarContador();
+    setInterval(atualizarContador, 1000);
+  </script>
+</body>
+</html>
