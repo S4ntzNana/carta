@@ -14,7 +14,7 @@ body{
 
 a{
   text-decoration: none !important;
-    color: white;
+    text-color: white;
 }
 header{
     display: flex;
