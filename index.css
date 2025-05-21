@@ -13,7 +13,8 @@ body{
 }
 
 a{
-  text-decoration: none !important;  
+  text-decoration: none !important;
+    color: white;
 }
 header{
     display: flex;
