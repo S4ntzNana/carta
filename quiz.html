@@ -1,31 +1,32 @@
+<!-- quiz.html -->
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
-  <title>Quiz</title>
+  <meta charset="UTF-8">
+  <title>Perguntinha 💘</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
- <div>
-   <h1>Teste</h1>
-  <label for="answer">Resposta..</label>
-  <input name="answer"  type="text">
-  <input id="answer" type="submit" value="submit" onclick="answer()">
-</div>
+  <div class="quiz-container">
+    <h1>💖</h1>
+    <p>Qual vai ser o nome do nosso primeiro filho?</p>
+    
+    <input id="resposta" type="text" placeholder="Dica: é o mais lindo 😌">
+    <button onclick="responder()">Responder</button>
+  </div>
 
-
-  
- <script>
-    var uInp = document.getElementById("answer");
-
-function answer() {
-  if (uInp == "pedro") {
-    alert("correct");
-  }else{
-    alert("incorrect");
-  };
-};
- </script>
-
-
+  <script>
+    function responder() {
+      const nome = document.getElementById("resposta").value.toLowerCase().trim();
+      if (nome === "pedro") {
+        alert("A resposta certa, claro");
+        window.location.href = "carta.html";
+      } else if (nome === "arthur") {
+        alert("Esse é o segundo, bobão");
+      } else {
+        alert("bota outro");
+      }
+    }
+  </script>
 </body>
 </html>
